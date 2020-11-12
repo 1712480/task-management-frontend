@@ -51,7 +51,7 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
   };
 
   const updateTicket = async (ticketId: string, newColumn: string) => {
-    await axios.post('http://localhost:3001/board/update-ticket', {
+    await axios.post('https://mid-term-backend.herokuapp.com/board/update-ticket', {
       ticketId,
       newColumn,
     });

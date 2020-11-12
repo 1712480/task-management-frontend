@@ -19,7 +19,7 @@ export default function Home() {
           <Card className="p-3">
             <CardTitle>This is a pretty long title</CardTitle>
             <CardText>Short description of the board...</CardText>
-            <Link href="/board">
+            <Link href="/board?boardName=board1">
               <Button className="alert-info">Open</Button>
             </Link>
           </Card>
