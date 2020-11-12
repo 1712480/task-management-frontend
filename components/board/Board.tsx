@@ -13,10 +13,20 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
     event.preventDefault();
     const sourceId = event.dataTransfer.getData('text/plain');
     const sourceIdElement = document.getElementById(sourceId);
+    const sourceParentId = sourceIdElement.parentElement.id;
     const targetElement = document.getElementById(event.target.id);
+
+    // Drop on the same column
+    if (sourceParentId === event.target.id) {
+      return event.dataTransfer.clearData();
+    }
 
     if (event.target.id.search('avoid-drop') !== -1) {
       const parentElement = document.getElementById(event.target.id.split('-')[2]);
+
+      if (parentElement.id === sourceParentId) {
+        return event.dataTransfer.clearData();
+      }
 
       parentElement.appendChild(sourceIdElement);
       if (sourceId !== event.target.id) {

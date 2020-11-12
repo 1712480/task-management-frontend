@@ -6,7 +6,7 @@ import { Card, CardTitle, CardText, Button, Row, Container } from 'reactstrap';
 
 const Ticket: React.FunctionComponent<ITicket> = (props) => {
   const { _id, ticketName, column: columnId, description, updatedAt, handleOnDragStart } = props;
-  console.log(props);
+
   return (
     <Card id={_id} draggable="true" onDragStart={handleOnDragStart} className="mb-3 p-3 ticket-container">
       <CardTitle id={`avoid-drop-${columnId}`} tag="h4">
