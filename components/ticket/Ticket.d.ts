@@ -5,5 +5,7 @@ export interface ITicket {
   handleOnDragStart: (e) => void,
   ticketName: string,
   updatedAt: string,
-  createdAt: string
+  createdAt: string,
+  saveTicket: Function,
+  deleteTicket: Function
 }
