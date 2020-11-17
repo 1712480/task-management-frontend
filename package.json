@@ -9,6 +9,7 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
+    "@types/react-redux": "^7.1.11",
     "@types/reactstrap": "^8.7.2",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.0",

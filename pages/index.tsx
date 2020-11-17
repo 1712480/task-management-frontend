@@ -1,19 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-
 import { Container, Card, CardTitle, CardText, Button } from 'reactstrap';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { connect } from 'react-redux';
 
-import reducer from '../reducers/reducer';
+import { getUser } from '../redux/selectors';
 import '../styles/Home.module.scss';
 import axios from 'axios';
-import BoardPage from './board';
-
-const store = createStore(reducer);
 
 const Home = (props) => {
-  const { data } = props;
+  const { data, user } = props;
+  console.log(user);
 
   const renderBoards =
     data.boards &&
@@ -30,12 +26,10 @@ const Home = (props) => {
       );
     });
   return (
-    <Provider store={store}>
-      <Container>
-        <h1 className="justify-content-center">Board List</h1>
-        <Container className="mt-3 grid-layout">{renderBoards}</Container>
-      </Container>
-    </Provider>
+    <Container>
+      <h1 className="justify-content-center">Board List</h1>
+      <Container className="mt-3 grid-layout">{renderBoards}</Container>
+    </Container>
   );
 };
 
@@ -46,4 +40,9 @@ Home.getInitialProps = async () => {
   };
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  const user = getUser(state);
+  return { user };
+};
+
+export default connect(mapStateToProps)(Home);

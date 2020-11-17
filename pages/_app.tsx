@@ -1,13 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { Navbar, NavbarBrand, NavItem, Nav, Button } from 'reactstrap';
 import Link from 'next/link';
 
-import { Navbar, NavbarBrand, NavItem, Nav, Button } from 'reactstrap';
+import store from '../redux/store';
+
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Provider store={store}>
       <Navbar color="dark" light expand="md">
         <Link href="/">
           <NavbarBrand className="ml-3" style={{ color: 'white', cursor: 'pointer' }}>
@@ -28,7 +31,7 @@ function MyApp({ Component, pageProps }) {
         </Nav>
       </Navbar>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 
