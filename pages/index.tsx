@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import { Container, Card, CardTitle, CardText, Button, Spinner } from 'reactstrap';
@@ -56,7 +56,9 @@ const Home = (props) => {
           <Spinner />
         </div>
       )}
-      <h1 className="justify-content-center">Board List</h1>
+      <h1 className="justify-content-center" style={{ textAlign: 'center' }}>
+        Board List
+      </h1>
       <Container className="mt-3 grid-layout">
         {renderBoards}
         <Modal className="image-container" createTicket={createBoard}>

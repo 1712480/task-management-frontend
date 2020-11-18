@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Nav, Navbar, NavbarBrand, NavItem } from 'reactstrap';
 import Link from 'next/link';
