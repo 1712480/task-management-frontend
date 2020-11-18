@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import axios from 'axios';
 
 import Ticket from '../ticket/Ticket';
-import Modal from './Modal';
+import Modal from '../BoardModal/Modal';
 
 import { IBoardProps } from './Board.d';
 
@@ -58,7 +58,7 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
 
   const updateTicket = async (ticketId: string, newColumn: string) => {
     await axios
-      .post('http://localhost:3001/board/update-ticket', {
+      .post('https://mid-term-backend.herokuapp.com/board/update-ticket', {
         ticketId,
         newColumn,
       })
@@ -68,7 +68,7 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
   const saveTicket = async (id, name, des) => {
     setLoading(true);
     await axios
-      .post('http://localhost:3001/board/save-ticket', {
+      .post('https://mid-term-backend.herokuapp.com/board/save-ticket', {
         id,
         name,
         des,
@@ -79,7 +79,7 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
   const createTicket = async (columnType, ticketName, description) => {
     setLoading(true);
     await axios
-      .post('http://localhost:3001/board/create-ticket', {
+      .post('https://mid-term-backend.herokuapp.com/board/create-ticket', {
         ticketName,
         description,
         columnType,
@@ -91,7 +91,7 @@ const Board: React.FunctionComponent<IBoardProps> = (props) => {
   const deleteTicket = async (ticketId, columnId) => {
     setLoading(true);
     await axios
-      .post('http://localhost:3001/board/delete-ticket', {
+      .post('https://mid-term-backend.herokuapp.com/board/delete-ticket', {
         ticketId,
         columnId,
       })
