@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import axios from 'axios';
 
 import Ticket from '../ticket/Ticket';
-import Modal from './Modal';
+import Modal from '../BoardModal/Modal';
 
 import { IBoardProps } from './Board.d';
 
