@@ -7,12 +7,12 @@ import axios from 'axios';
 
 import { USER_ACTIONS } from '../../redux/user/actions';
 
-const Index = ({ userLogin }) => {
+const Index = () => {
   const signUp = async () => {
     const userName = (document.getElementById('userName') as HTMLInputElement).value;
     const password = (document.getElementById('password') as HTMLInputElement).value;
     await axios
-      .post('http://localhost:3001/user/create-user', {
+      .post('https://mid-term-backend.herokuapp.com/user/create-user', {
         userName,
         password,
       })

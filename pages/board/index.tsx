@@ -40,7 +40,7 @@ const BoardPage = (props) => {
 };
 
 BoardPage.getInitialProps = async ({ query: { id } }) => {
-  const response = await axios.get(`http://localhost:3001/board?id=${id}`);
+  const response = await axios.get(`https://mid-term-backend.herokuapp.com/board?id=${id}`);
   return { id, data: response.data };
 };
 

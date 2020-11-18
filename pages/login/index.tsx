@@ -12,7 +12,7 @@ const Login = ({ userLogin }) => {
     const userName = (document.getElementById('userName') as HTMLInputElement).value;
     const password = (document.getElementById('password') as HTMLInputElement).value;
     await axios
-      .post('http://localhost:3001/user/user-login', {
+      .post('https://mid-term-backend.herokuapp.com/user/user-login', {
         userName,
         password,
       })

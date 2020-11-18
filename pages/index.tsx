@@ -33,7 +33,7 @@ const Home = (props) => {
   const deleteBoard = async (boardId) => {
     setLoading(true);
     await axios
-      .post('http://localhost:3001/board/delete-board', {
+      .post('https://mid-term-backend.herokuapp.com/board/delete-board', {
         boardId,
       })
       .finally(() => Router.reload());
@@ -42,7 +42,7 @@ const Home = (props) => {
   const createBoard = async (columnType, name, description) => {
     setLoading(true);
     await axios
-      .post('http://localhost:3001/board/create-board', {
+      .post('https://mid-term-backend.herokuapp.com/board/create-board', {
         boardName: name,
         description,
       })
